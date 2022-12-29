@@ -193,3 +193,9 @@ sourceSets {
 toolchain {
 	testJvmArgs.add("--add-opens=java.base/java.net=ALL-UNNAMED")
 }
+
+test {
+	filter {
+		includeTestsMatching "org.springframework.boot.json.*"
+	}
+}

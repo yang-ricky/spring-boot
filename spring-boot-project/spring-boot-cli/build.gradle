@@ -100,6 +100,9 @@ sourceSets {
 
 test {
 	dependsOn syncTestRepository
+	filter {
+		includeTestsMatching "org.springframework.boot.cli.command.encodepassword.*"
+	}
 }
 
 task fullJar(type: Jar) {
@@ -153,6 +156,9 @@ task zip(type: Zip) {
 
 intTest {
 	dependsOn syncTestRepository, zip
+	filter {
+		includeTestsMatching "org.springframework.boot.cli.CommandLineIT"
+	}
 }
 
 task tar(type: Tar) {

@@ -208,6 +208,9 @@ dependencies {
 
 test {
 	outputs.dir("${buildDir}/generated-snippets")
+	filter {
+		includeTestsMatching "org.springframework.boot.actuate.autoconfigure.beans.*"
+	}
 }
 
 task dependencyVersions(type: org.springframework.boot.build.constraints.ExtractVersionConstraints) {

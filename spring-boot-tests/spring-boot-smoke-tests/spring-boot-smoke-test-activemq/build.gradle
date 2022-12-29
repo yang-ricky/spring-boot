@@ -10,3 +10,9 @@ dependencies {
 
 	testImplementation(project(":spring-boot-project:spring-boot-starters:spring-boot-starter-test"))
 }
+
+test {
+	filter {
+		include "org.springframework.web.reactive.accept.*"
+	}
+}

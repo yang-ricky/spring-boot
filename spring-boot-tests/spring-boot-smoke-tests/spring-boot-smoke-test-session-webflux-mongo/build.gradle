@@ -18,3 +18,9 @@ dependencies {
 	testImplementation("org.testcontainers:testcontainers")
 	testImplementation("org.testcontainers:junit-jupiter")
 }
+
+test {
+	filter {
+		includeTestsMatching "smoketest.session.CheatSampleSessionWebFluxMongoApplicationTests"
+	}
+}

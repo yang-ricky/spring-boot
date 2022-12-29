@@ -133,7 +133,7 @@ artifacts {
 }
 
 test {
-	include "**/*Tests.class"
+	include "org.springframework.boot.test.autoconfigure.core.*"
 }
 
 task testSliceMetadata(type: org.springframework.boot.build.test.autoconfigure.TestSliceMetadata) {

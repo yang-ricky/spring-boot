@@ -276,3 +276,9 @@ tasks.named("checkSpringConfigurationMetadata").configure {
 		"spring.groovy.template.configuration.*"
 	]
 }
+
+test {
+	filter {
+		include "org.springframework.boot.autoconfigure.gson.*"
+	}
+}

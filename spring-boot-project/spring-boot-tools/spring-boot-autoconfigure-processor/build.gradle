@@ -14,3 +14,9 @@ dependencies {
 	testImplementation("org.springframework:spring-core")
 	testImplementation("org.junit.jupiter:junit-jupiter")
 }
+
+test {
+	filter {
+
+	}
+}

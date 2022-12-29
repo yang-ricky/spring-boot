@@ -19,3 +19,9 @@ dependencies {
 	testImplementation("org.testcontainers:junit-jupiter")
 	testImplementation("org.testcontainers:postgresql")
 }
+
+test {
+	filter {
+		includeTestsMatching "smoketest.data.r2dbc.CheatCityRepositoryTests"
+	}
+}

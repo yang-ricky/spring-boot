@@ -117,3 +117,9 @@ dependencies {
 	testRuntimeOnly("org.glassfish.jersey.ext:jersey-spring5")
 	testRuntimeOnly("org.hsqldb:hsqldb")
 }
+
+test {
+	filter {
+		includeTestsMatching "org.springframework.boot.actuate.system.*"
+	}
+}

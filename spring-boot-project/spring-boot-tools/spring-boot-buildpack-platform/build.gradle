@@ -27,3 +27,9 @@ dependencies {
 	testImplementation("org.mockito:mockito-junit-jupiter")
 	testImplementation("org.skyscreamer:jsonassert")
 }
+
+test {
+	filter {
+		includeTestsMatching "org.springframework.boot.buildpack.platform.json.JsonStreamTests"
+	}
+}

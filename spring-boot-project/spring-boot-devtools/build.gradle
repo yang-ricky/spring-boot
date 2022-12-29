@@ -100,4 +100,13 @@ task syncIntTestDependencies(type: Sync) {
 
 intTest {
 	dependsOn syncIntTestDependencies
+	filter {
+		includeTestsMatching "org.springframework.boot.devtools.tests.DevToolsWithLazyInitializationIntegrationTests"
+	}
+}
+
+test {
+	filter {
+		includeTestsMatching "org.springframework.boot.devtools.autoconfigure.DevToolsPropertiesTests"
+	}
 }

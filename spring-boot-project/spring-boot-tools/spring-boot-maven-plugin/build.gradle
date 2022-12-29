@@ -149,3 +149,15 @@ prepareMavenBinaries {
 artifacts {
 	"documentation" zip
 }
+
+intTest{
+	filter {
+		includeTestsMatching "org.springframework.boot.maven.EclipseM2eIntegrationTests"
+	}
+}
+
+test{
+	filter {
+		includeTestsMatching "org.springframework.boot.maven.EnvVariablesTests"
+	}
+}

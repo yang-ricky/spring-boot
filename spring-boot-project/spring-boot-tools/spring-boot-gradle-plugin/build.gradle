@@ -124,3 +124,9 @@ artifacts {
 toolchain {
 	maximumCompatibleJavaVersion = JavaLanguageVersion.of(18)
 }
+
+test {
+	filter {
+		includeTestsMatching "org.springframework.boot.gradle.docs.GettingStartedDocumentationTests"
+	}
+}
