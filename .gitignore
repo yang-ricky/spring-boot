@@ -1,4 +1,8 @@
 *#
+heapdump*
+javacore*
+Snap*
+.mvn
 *.iml
 *.ipr
 *.iws
