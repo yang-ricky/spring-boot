@@ -509,5 +509,11 @@ gradle.taskGraph.whenReady {
 		if (task.name.contains("aggregatedJavadoc")) {
 			task.enabled = false
 		}
+		if (task.name.contains("zip")) {
+			task.enabled = false
+		}
+		if (task.name.contains("publish")) {
+			task.enabled = false
+		}
 	}
 }

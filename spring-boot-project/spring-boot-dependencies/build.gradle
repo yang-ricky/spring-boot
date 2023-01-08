@@ -1951,3 +1951,11 @@ bom {
 generateMetadataFileForMavenPublication {
 	enabled = false
 }
+
+//gradle.taskGraph.whenReady {
+//	tasks.each { task ->
+//		if (task.name.contains("generateEffectiveBom")) {
+//			task.enabled = false
+//		}
+//	}
+//}

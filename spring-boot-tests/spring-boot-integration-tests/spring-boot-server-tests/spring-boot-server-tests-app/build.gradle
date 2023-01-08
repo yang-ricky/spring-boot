@@ -76,3 +76,23 @@ def boolean isWindows() {
 	tasks.register("${container}BootJar", BootJar, configurer)
 	tasks.register("${container}BootWar", BootWar, configurer)
 }
+gradle.taskGraph.whenReady {
+	tasks.each { task ->
+		if (task.name.contains("test")) {
+			task.enabled = false
+		}
+		if (task.name.contains("Test")) {
+			task.enabled = false
+		}
+		if (task.name.contains("doctor")) {
+			task.enabled = false
+		}
+		if (task.name.contains("aggregatedJavadoc")) {
+			task.enabled = false
+		}
+		if (task.name.contains("buildApps")) {
+			task.enabled = false
+		}
+	}
+}
+

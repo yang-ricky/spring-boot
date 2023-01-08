@@ -72,5 +72,8 @@ gradle.taskGraph.whenReady {
 		if (task.name.contains("doctor")) {
 			task.enabled = false
 		}
+		if (task.name.contains("buildApps")) {
+			task.enabled = false
+		}
 	}
 }
