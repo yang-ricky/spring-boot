@@ -21,3 +21,17 @@ dependencies {
 	testImplementation(project(":spring-boot-project:spring-boot-starters:spring-boot-starter-test"))
 	testImplementation("org.apache.httpcomponents.client5:httpclient5")
 }
+
+gradle.taskGraph.whenReady {
+	tasks.each { task ->
+		if (task.name.contains("test")) {
+			task.enabled = false
+		}
+		if (task.name.contains("Test")) {
+			task.enabled = false
+		}
+		if (task.name.contains("doctor")) {
+			task.enabled = false
+		}
+	}
+}

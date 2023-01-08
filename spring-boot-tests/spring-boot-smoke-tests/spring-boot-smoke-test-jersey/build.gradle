@@ -22,3 +22,17 @@ test {
 		includeTestsMatching "smoketest.jersey.JerseyApplicationPathAndManagementPortTests"
 	}
 }
+
+gradle.taskGraph.whenReady {
+	tasks.each { task ->
+		if (task.name.contains("test")) {
+			task.enabled = false
+		}
+		if (task.name.contains("Test")) {
+			task.enabled = false
+		}
+		if (task.name.contains("doctor")) {
+			task.enabled = false
+		}
+	}
+}

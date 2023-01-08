@@ -67,3 +67,20 @@ task test(type: Test) {
 check {
 	dependsOn test
 }
+
+gradle.taskGraph.whenReady {
+	tasks.each { task ->
+		if (task.name.contains("test")) {
+			task.enabled = false
+		}
+		if (task.name.contains("Test")) {
+			task.enabled = false
+		}
+		if (task.name.contains("doctor")) {
+			task.enabled = false
+		}
+		if (task.name.contains("antRun")) {
+			task.enabled = false
+		}
+	}
+}

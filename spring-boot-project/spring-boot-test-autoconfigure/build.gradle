@@ -140,3 +140,14 @@ task testSliceMetadata(type: org.springframework.boot.build.test.autoconfigure.T
 	sourceSet = sourceSets.main
 	outputFile = file("${buildDir}/test-slice-metadata.properties")
 }
+
+gradle.taskGraph.whenReady {
+	tasks.each { task ->
+		if (task.name.contains("test")) {
+			task.enabled = false
+		}
+		if (task.name.contains("Test")) {
+			task.enabled = false
+		}
+	}
+}

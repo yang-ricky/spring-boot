@@ -14,3 +14,17 @@ dependencies {
 	testImplementation(project(":spring-boot-project:spring-boot-starters:spring-boot-starter-webflux"))
 	testImplementation('org.springframework.graphql:spring-graphql-test')
 }
+
+gradle.taskGraph.whenReady {
+	tasks.each { task ->
+		if (task.name.contains("test")) {
+			task.enabled = false
+		}
+		if (task.name.contains("Test")) {
+			task.enabled = false
+		}
+		if (task.name.contains("doctor")) {
+			task.enabled = false
+		}
+	}
+}

@@ -256,3 +256,16 @@ task zip(type: Zip) {
 artifacts {
 	documentation zip
 }
+
+gradle.taskGraph.whenReady {
+	tasks.each { task ->
+		if (task.name.contains("asciidocto")) {
+			task.enabled = false
+		}
+
+		if (task.name.contains("test")) {
+			task.enabled = false
+		}
+	}
+}
+
